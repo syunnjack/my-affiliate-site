@@ -1,6 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import "./globals.css";
+//import "./globals.css";
 
 export const metadata: Metadata = {
     title: "全国市区町村 蓄電池・V2H補助金ナビ",
