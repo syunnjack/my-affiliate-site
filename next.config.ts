@@ -6,9 +6,9 @@ const nextConfig: NextConfig = {
         ignoreBuildErrors: true,
     },
     // 最新のNext.jsでESLintを無視する正しい書き方
-    eslint: {
-        ignoreDuringBuilds: true,
-    },
+    /*eslint: {
+    ignoreDuringBuilds: true,
+  },*/
     // もしこれでもエラーが出る場合は、一旦 eslint 行を消してもOKです
 };
 
