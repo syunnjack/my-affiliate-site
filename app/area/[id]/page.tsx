@@ -1,134 +1,99 @@
-// app/layout.tsx
-import type { Metadata } from "next";
-//import "./globals.css";
+import cities from "@/data/cities.json";
+import MapWrapper from "@/components/MapWrapper";
+import Link from "next/link";
 
-export const metadata: Metadata = {
-    title: "全国市区町村 蓄電池・V2H補助金ナビ",
-    description: "2026年度の最新補助金情報を市区町村ごとにまとめています",
-};
+// 23区すべてのページを事前に作成するための設定
+export async function generateStaticParams() {
+    return cities.map((city) => ({
+        id: city.id,
+    }));
+}
 
-export default function RootLayout({
-    children,
+export default async function CityPage({
+    params,
 }: {
-    children: React.ReactNode;
+    params: Promise<{ id: string }>;
 }) {
-    return (
-        <html lang="ja">
-            <body style={{ margin: 0, backgroundColor: "#fcfcfc" }}>
-                {children}
+    const { id } = await params;
+    const city = cities.find((c) => c.id === id);
 
-                {/* 審査用：必須3点セットフッター */}
-                <footer
+    if (!city) {
+        return <div>市区町村が見つかりません</div>;
+    }
+
+    return (
+        <main style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+            <Link href="/" style={{ color: "#0052cc", fontSize: "14px" }}>
+                ← 23区一覧へ戻る
+            </Link>
+
+            <h1 style={{ fontSize: "24px", marginTop: "20px" }}>
+                {city.pref}
+                {city.name}の蓄電池補助金【2026年最新】
+            </h1>
+
+            <div
+                style={{
+                    background: "#f0f7ff",
+                    padding: "20px",
+                    borderRadius: "8px",
+                    margin: "20px 0",
+                }}
+            >
+                <p style={{ fontSize: "18px", fontWeight: "bold", margin: 0 }}>
+                    補助金額目安:{" "}
+                    <span style={{ color: "#ff4500", fontSize: "24px" }}>
+                        最大 {city.subsidy.toLocaleString()} 円
+                    </span>
+                </p>
+            </div>
+
+            {/* 地図の表示 */}
+            <div
+                style={{
+                    height: "400px",
+                    width: "100%",
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    marginBottom: "30px",
+                    border: "1px solid #ddd",
+                }}
+            >
+                <MapWrapper lat={city.lat} lng={city.lng} city={city.name} />
+            </div>
+
+            {/* アフィリエイトボタン（タイナビ等の案件用） */}
+            <div
+                style={{
+                    textAlign: "center",
+                    padding: "30px",
+                    background: "#fff",
+                    border: "2px solid #ff8c00",
+                    borderRadius: "12px",
+                }}
+            >
+                <h3 style={{ marginTop: 0 }}>
+                    {city.name}で一番安く設置できる業者を探す
+                </h3>
+                <p style={{ fontSize: "14px", color: "#666" }}>
+                    ※補助金は予算に限りがあります。早めの見積もりを推奨します。
+                </p>
+                <a
+                    href="ここにafbのURLを入れる"
                     style={{
-                        marginTop: "80px",
-                        padding: "40px 20px",
-                        backgroundColor: "#fff",
-                        borderTop: "1px solid #eee",
-                        color: "#444",
-                        fontFamily: "sans-serif",
+                        display: "inline-block",
+                        background: "#ff8c00",
+                        color: "#fff",
+                        padding: "18px 40px",
+                        borderRadius: "8px",
+                        textDecoration: "none",
+                        fontWeight: "bold",
+                        fontSize: "18px",
                     }}
                 >
-                    <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-                        <div
-                            style={{
-                                display: "grid",
-                                gridTemplateColumns:
-                                    "repeat(auto-fit, minmax(250px, 1fr))",
-                                gap: "30px",
-                                marginBottom: "40px",
-                            }}
-                        >
-                            {/* 1. 運営者情報 */}
-                            <div>
-                                <h3
-                                    style={{
-                                        fontSize: "16px",
-                                        borderLeft: "4px solid #0052cc",
-                                        paddingLeft: "10px",
-                                    }}
-                                >
-                                    運営者情報
-                                </h3>
-                                <p style={{ fontSize: "14px" }}>
-                                    運営者名：知多丸
-                                </p>
-                                <p style={{ fontSize: "14px" }}>
-                                    連絡先：syunn500@gmail.com
-                                </p>
-                                <p style={{ fontSize: "12px", color: "#666" }}>
-                                    当サイトでは、プログラミングスキルを活用し、全国の自治体が公開している補助金情報を分かりやすく整理して提供しています。
-                                </p>
-                            </div>
-
-                            {/* 2. プライバシーポリシー & 免責事項 */}
-                            <div>
-                                <h3
-                                    style={{
-                                        fontSize: "16px",
-                                        borderLeft: "4px solid #0052cc",
-                                        paddingLeft: "10px",
-                                    }}
-                                >
-                                    免責事項・広告について
-                                </h3>
-                                <p
-                                    style={{
-                                        fontSize: "12px",
-                                        lineHeight: "1.6",
-                                        color: "#666",
-                                    }}
-                                >
-                                    【広告の配信について】
-                                    <br />
-                                    当サイトはアフィリエイトプログラムに参加しており、適切なプロモーションを含みます。リンク先の商品・サービスは当サイトが販売しているものではありません。
-                                    <br />
-                                    <br />
-                                    【免責事項】
-                                    <br />
-                                    掲載情報の正確さには万全を期しておりますが、内容を保証するものではありません。補助金制度は変更される可能性があるため、必ず各自治体の公式サイトをご確認ください。
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* 3. プライバシーポリシー全文 */}
-                        <div
-                            style={{
-                                borderTop: "1px solid #f0f0f0",
-                                paddingTop: "20px",
-                            }}
-                        >
-                            <h3
-                                style={{
-                                    fontSize: "14px",
-                                    textAlign: "center",
-                                }}
-                            >
-                                プライバシーポリシー
-                            </h3>
-                            <p
-                                style={{
-                                    fontSize: "11px",
-                                    color: "#888",
-                                    lineHeight: "1.5",
-                                }}
-                            >
-                                個人情報の利用目的：お問い合わせへの回答や情報提供のために利用します。第三者への提供は行いません。
-                                クッキー（Cookie）の利用：アクセス解析や広告配信のためにCookieを使用することがあります。ブラウザの設定で無効にすることが可能です。
-                            </p>
-                            <p
-                                style={{
-                                    textAlign: "center",
-                                    fontSize: "12px",
-                                    marginTop: "20px",
-                                    color: "#aaa",
-                                }}
-                            >
-                                &copy; 2026 全国市区町村 蓄電池・V2H補助金ナビ
-                            </p>
-                        </div>
-                    </div>
-                </footer>
-            </body>
-        </html>
+                    無料で一括見積もりを依頼する
+                </a>
+            </div>
+        </main>
     );
 }
