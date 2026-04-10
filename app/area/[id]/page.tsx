@@ -76,6 +76,31 @@ export default async function CityPage({
                 <MapWrapper lat={city.lat} lng={city.lng} city={city.name} />
             </div>
 
+            {/* 地図の下に追加 */}
+            <div
+                style={{
+                    marginTop: "20px",
+                    padding: "15px",
+                    backgroundColor: "#f9f9f9",
+                    borderRadius: "8px",
+                    borderLeft: "5px solid #0052cc",
+                }}
+            >
+                <p style={{ margin: 0, fontSize: "14px", fontWeight: "bold" }}>
+                    💡 失敗しないためにチェック！
+                </p>
+                <Link
+                    href="/guide"
+                    style={{
+                        color: "#0052cc",
+                        textDecoration: "underline",
+                        fontSize: "15px",
+                    }}
+                >
+                    蓄電池補助金の申請手順と、絶対にやってはいけない注意点
+                </Link>
+            </div>
+
             {/* グリエネのアクションエリア */}
             <div
                 style={{

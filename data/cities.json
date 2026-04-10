@@ -1,27 +1,507 @@
 [
     {
-        "id": "chiyoda",
-        "name": "千代田区",
-        "pref": "東京都",
+        "id": "yokohama",
+        "name": "横浜市",
+        "pref": "神奈川県",
         "subsidy": 100000,
-        "lat": 35.6938,
-        "lng": 139.753
+        "lat": 35.4437,
+        "lng": 139.638
     },
     {
-        "id": "chuo",
-        "name": "中央区",
-        "pref": "東京都",
+        "id": "osaka",
+        "name": "大阪市",
+        "pref": "大阪府",
         "subsidy": 100000,
-        "lat": 35.6663,
-        "lng": 139.769
+        "lat": 34.6937,
+        "lng": 135.5023
     },
     {
-        "id": "minato",
-        "name": "港区",
+        "id": "nagoya",
+        "name": "名古屋市",
+        "pref": "愛知県",
+        "subsidy": 100000,
+        "lat": 35.1815,
+        "lng": 136.9066
+    },
+    {
+        "id": "sapporo",
+        "name": "札幌市",
+        "pref": "北海道",
+        "subsidy": 100000,
+        "lat": 43.0611,
+        "lng": 141.3564
+    },
+    {
+        "id": "fukuoka",
+        "name": "福岡市",
+        "pref": "福岡県",
+        "subsidy": 100000,
+        "lat": 33.5904,
+        "lng": 130.4017
+    },
+    {
+        "id": "kawasaki",
+        "name": "川崎市",
+        "pref": "神奈川県",
+        "subsidy": 100000,
+        "lat": 35.5308,
+        "lng": 139.7029
+    },
+    {
+        "id": "kobe",
+        "name": "神戸市",
+        "pref": "兵庫県",
+        "subsidy": 100000,
+        "lat": 34.6901,
+        "lng": 135.1955
+    },
+    {
+        "id": "kyoto",
+        "name": "京都市",
+        "pref": "京都府",
+        "subsidy": 100000,
+        "lat": 35.0116,
+        "lng": 135.7681
+    },
+    {
+        "id": "saitama",
+        "name": "さいたま市",
+        "pref": "埼玉県",
+        "subsidy": 100000,
+        "lat": 35.8617,
+        "lng": 139.6455
+    },
+    {
+        "id": "hiroshima",
+        "name": "広島市",
+        "pref": "広島県",
+        "subsidy": 100000,
+        "lat": 34.3853,
+        "lng": 132.4553
+    },
+    {
+        "id": "sendai",
+        "name": "仙台市",
+        "pref": "宮城県",
+        "subsidy": 100000,
+        "lat": 38.2682,
+        "lng": 140.8694
+    },
+    {
+        "id": "chiba",
+        "name": "千葉市",
+        "pref": "千葉県",
+        "subsidy": 100000,
+        "lat": 35.6073,
+        "lng": 140.1063
+    },
+    {
+        "id": "setagaya",
+        "name": "世田谷区",
         "pref": "東京都",
         "subsidy": 100000,
-        "lat": 35.6581,
-        "lng": 139.7516
+        "lat": 35.6465,
+        "lng": 139.6533
+    },
+    {
+        "id": "kitakyushu",
+        "name": "北九州市",
+        "pref": "福岡県",
+        "subsidy": 100000,
+        "lat": 33.8835,
+        "lng": 130.8752
+    },
+    {
+        "id": "sakai",
+        "name": "堺市",
+        "pref": "大阪府",
+        "subsidy": 100000,
+        "lat": 34.5734,
+        "lng": 135.483
+    },
+    {
+        "id": "hamamatsu",
+        "name": "浜松市",
+        "pref": "静岡県",
+        "subsidy": 100000,
+        "lat": 34.7108,
+        "lng": 137.7261
+    },
+    {
+        "id": "nerima",
+        "name": "練馬区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.7356,
+        "lng": 139.6517
+    },
+    {
+        "id": "niigata",
+        "name": "新潟市",
+        "pref": "新潟県",
+        "subsidy": 100000,
+        "lat": 37.9162,
+        "lng": 139.0364
+    },
+    {
+        "id": "ota-tokyo",
+        "name": "大田区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.5614,
+        "lng": 139.7161
+    },
+    {
+        "id": "kumamoto",
+        "name": "熊本市",
+        "pref": "熊本県",
+        "subsidy": 100000,
+        "lat": 32.7898,
+        "lng": 130.7417
+    },
+    {
+        "id": "sagamihara",
+        "name": "相模原市",
+        "pref": "神奈川県",
+        "subsidy": 100000,
+        "lat": 35.5714,
+        "lng": 139.3734
+    },
+    {
+        "id": "okayama",
+        "name": "岡山市",
+        "pref": "岡山県",
+        "subsidy": 100000,
+        "lat": 34.6551,
+        "lng": 133.9195
+    },
+    {
+        "id": "adachi",
+        "name": "足立区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.775,
+        "lng": 139.8045
+    },
+    {
+        "id": "edogawa",
+        "name": "江戸川区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.7067,
+        "lng": 139.8672
+    },
+    {
+        "id": "shizuoka",
+        "name": "静岡市",
+        "pref": "静岡県",
+        "subsidy": 100000,
+        "lat": 34.9755,
+        "lng": 138.3827
+    },
+    {
+        "id": "funabashi",
+        "name": "船橋市",
+        "pref": "千葉県",
+        "subsidy": 100000,
+        "lat": 35.6947,
+        "lng": 139.9826
+    },
+    {
+        "id": "suginami",
+        "name": "杉並区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.6995,
+        "lng": 139.6364
+    },
+    {
+        "id": "itabashi",
+        "name": "板橋区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.7512,
+        "lng": 139.7097
+    },
+    {
+        "id": "kawaguchi",
+        "name": "川口市",
+        "pref": "埼玉県",
+        "subsidy": 100000,
+        "lat": 35.8077,
+        "lng": 139.7237
+    },
+    {
+        "id": "kagoshima",
+        "name": "鹿児島市",
+        "pref": "鹿児島県",
+        "subsidy": 100000,
+        "lat": 31.5966,
+        "lng": 130.5571
+    },
+    {
+        "id": "hachioji",
+        "name": "八王子市",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.6622,
+        "lng": 139.3311
+    },
+    {
+        "id": "koto",
+        "name": "江東区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.6728,
+        "lng": 139.8174
+    },
+    {
+        "id": "himeji",
+        "name": "姫路市",
+        "pref": "兵庫県",
+        "subsidy": 100000,
+        "lat": 34.8151,
+        "lng": 134.6853
+    },
+    {
+        "id": "utsunomiya",
+        "name": "宇都宮市",
+        "pref": "栃木県",
+        "subsidy": 100000,
+        "lat": 36.5551,
+        "lng": 139.8826
+    },
+    {
+        "id": "ichikawa",
+        "name": "市川市",
+        "pref": "千葉県",
+        "subsidy": 100000,
+        "lat": 35.7224,
+        "lng": 139.93
+    },
+    {
+        "id": "matsudo",
+        "name": "松戸市",
+        "pref": "千葉県",
+        "subsidy": 100000,
+        "lat": 35.7847,
+        "lng": 139.9029
+    },
+    {
+        "id": "matsuyama",
+        "name": "松山市",
+        "pref": "愛媛県",
+        "subsidy": 100000,
+        "lat": 33.8391,
+        "lng": 132.7655
+    },
+    {
+        "id": "higashiosaka",
+        "name": "東大阪市",
+        "pref": "大阪府",
+        "subsidy": 100000,
+        "lat": 34.6795,
+        "lng": 135.6001
+    },
+    {
+        "id": "nishinomiya",
+        "name": "西宮市",
+        "pref": "兵庫県",
+        "subsidy": 100000,
+        "lat": 34.7375,
+        "lng": 135.3415
+    },
+    {
+        "id": "oita",
+        "name": "大分市",
+        "pref": "大分県",
+        "subsidy": 100000,
+        "lat": 33.2381,
+        "lng": 131.6125
+    },
+    {
+        "id": "kurashiki",
+        "name": "倉敷市",
+        "pref": "岡山県",
+        "subsidy": 100000,
+        "lat": 34.5851,
+        "lng": 133.7723
+    },
+    {
+        "id": "katsushika",
+        "name": "葛飾区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.7433,
+        "lng": 139.8471
+    },
+    {
+        "id": "amagasaki",
+        "name": "尼崎市",
+        "pref": "兵庫県",
+        "subsidy": 100000,
+        "lat": 34.7174,
+        "lng": 135.415
+    },
+    {
+        "id": "kanazawa",
+        "name": "金沢市",
+        "pref": "石川県",
+        "subsidy": 100000,
+        "lat": 36.561,
+        "lng": 136.6562
+    },
+    {
+        "id": "fukuyama",
+        "name": "福山市",
+        "pref": "広島県",
+        "subsidy": 100000,
+        "lat": 34.4858,
+        "lng": 133.3625
+    },
+    {
+        "id": "fujisawa",
+        "name": "藤沢市",
+        "pref": "神奈川県",
+        "subsidy": 100000,
+        "lat": 35.3387,
+        "lng": 139.4917
+    },
+    {
+        "id": "kashiwa",
+        "name": "柏市",
+        "pref": "千葉県",
+        "subsidy": 100000,
+        "lat": 35.8622,
+        "lng": 139.9773
+    },
+    {
+        "id": "machida",
+        "name": "町田市",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.5467,
+        "lng": 139.4464
+    },
+    {
+        "id": "shinagawa",
+        "name": "品川区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.6087,
+        "lng": 139.7302
+    },
+    {
+        "id": "toyota",
+        "name": "豊田市",
+        "pref": "愛知県",
+        "subsidy": 100000,
+        "lat": 35.0824,
+        "lng": 137.1562
+    },
+    {
+        "id": "takamatsu",
+        "name": "高松市",
+        "pref": "香川県",
+        "subsidy": 100000,
+        "lat": 34.3427,
+        "lng": 134.0465
+    },
+    {
+        "id": "toyama",
+        "name": "富山市",
+        "pref": "富山県",
+        "subsidy": 100000,
+        "lat": 36.6959,
+        "lng": 137.2136
+    },
+    {
+        "id": "toyonaka",
+        "name": "豊中市",
+        "pref": "大阪府",
+        "subsidy": 100000,
+        "lat": 34.7817,
+        "lng": 135.4701
+    },
+    {
+        "id": "suita",
+        "name": "吹田市",
+        "pref": "大阪府",
+        "subsidy": 100000,
+        "lat": 34.7592,
+        "lng": 135.517
+    },
+    {
+        "id": "gifu",
+        "name": "岐阜市",
+        "pref": "岐阜県",
+        "subsidy": 100000,
+        "lat": 35.4233,
+        "lng": 136.7606
+    },
+    {
+        "id": "miyazaki",
+        "name": "宮崎市",
+        "pref": "宮崎県",
+        "subsidy": 100000,
+        "lat": 31.9077,
+        "lng": 131.4202
+    },
+    {
+        "id": "hirakata",
+        "name": "枚方市",
+        "pref": "大阪府",
+        "subsidy": 100000,
+        "lat": 34.816,
+        "lng": 135.65
+    },
+    {
+        "id": "nagasaki",
+        "name": "長崎市",
+        "pref": "長崎県",
+        "subsidy": 100000,
+        "lat": 32.7503,
+        "lng": 129.8779
+    },
+    {
+        "id": "okazaki",
+        "name": "岡崎市",
+        "pref": "愛知県",
+        "subsidy": 100000,
+        "lat": 34.9555,
+        "lng": 137.1652
+    },
+    {
+        "id": "ichinomiya",
+        "name": "一宮市",
+        "pref": "愛知県",
+        "subsidy": 100000,
+        "lat": 35.3041,
+        "lng": 136.7978
+    },
+    {
+        "id": "kita-tokyo",
+        "name": "北区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.7535,
+        "lng": 139.7341
+    },
+    {
+        "id": "yokusuka",
+        "name": "横須賀市",
+        "pref": "神奈川県",
+        "subsidy": 100000,
+        "lat": 35.2815,
+        "lng": 139.6677
+    },
+    {
+        "id": "takasaki",
+        "name": "高崎市",
+        "pref": "群馬県",
+        "subsidy": 100000,
+        "lat": 36.3219,
+        "lng": 139.0033
     },
     {
         "id": "shinjuku",
@@ -32,6 +512,326 @@
         "lng": 139.7034
     },
     {
+        "id": "toyohashi",
+        "name": "豊橋市",
+        "pref": "愛知県",
+        "subsidy": 100000,
+        "lat": 34.7692,
+        "lng": 137.3915
+    },
+    {
+        "id": "nagano",
+        "name": "長野市",
+        "pref": "長野県",
+        "subsidy": 100000,
+        "lat": 36.6485,
+        "lng": 138.1947
+    },
+    {
+        "id": "kawagoe",
+        "name": "川越市",
+        "pref": "埼玉県",
+        "subsidy": 100000,
+        "lat": 35.9248,
+        "lng": 139.4855
+    },
+    {
+        "id": "nakano",
+        "name": "中野区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.7072,
+        "lng": 139.6638
+    },
+    {
+        "id": "takatsuki",
+        "name": "高槻市",
+        "pref": "大阪府",
+        "subsidy": 100000,
+        "lat": 34.8465,
+        "lng": 135.6175
+    },
+    {
+        "id": "nara",
+        "name": "奈良市",
+        "pref": "奈良県",
+        "subsidy": 100000,
+        "lat": 34.6851,
+        "lng": 135.8327
+    },
+    {
+        "id": "otsu",
+        "name": "大津市",
+        "pref": "滋賀県",
+        "subsidy": 100000,
+        "lat": 35.0173,
+        "lng": 135.8517
+    },
+    {
+        "id": "wakayama",
+        "name": "和歌山市",
+        "pref": "和歌山県",
+        "subsidy": 100000,
+        "lat": 34.2305,
+        "lng": 135.1707
+    },
+    {
+        "id": "tokorozawa",
+        "name": "所沢市",
+        "pref": "埼玉県",
+        "subsidy": 100000,
+        "lat": 35.7892,
+        "lng": 139.4687
+    },
+    {
+        "id": "koshigaya",
+        "name": "越谷市",
+        "pref": "埼玉県",
+        "subsidy": 100000,
+        "lat": 35.8911,
+        "lng": 139.7911
+    },
+    {
+        "id": "maebashi",
+        "name": "前橋市",
+        "pref": "群馬県",
+        "subsidy": 100000,
+        "lat": 36.3895,
+        "lng": 139.0634
+    },
+    {
+        "id": "koriyama",
+        "name": "郡山市",
+        "pref": "福島県",
+        "subsidy": 100000,
+        "lat": 37.3985,
+        "lng": 140.3881
+    },
+    {
+        "id": "iwaki",
+        "name": "いわき市",
+        "pref": "福島県",
+        "subsidy": 100000,
+        "lat": 37.0505,
+        "lng": 140.8876
+    },
+    {
+        "id": "toshima",
+        "name": "豊島区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.7332,
+        "lng": 139.7199
+    },
+    {
+        "id": "asahikawa",
+        "name": "旭川市",
+        "pref": "北海道",
+        "subsidy": 100000,
+        "lat": 43.7706,
+        "lng": 142.3649
+    },
+    {
+        "id": "kochi",
+        "name": "高知市",
+        "pref": "高知県",
+        "subsidy": 100000,
+        "lat": 33.5597,
+        "lng": 133.5311
+    },
+    {
+        "id": "naha",
+        "name": "那覇市",
+        "pref": "沖縄県",
+        "subsidy": 100000,
+        "lat": 26.2124,
+        "lng": 127.6809
+    },
+    {
+        "id": "akashi",
+        "name": "明石市",
+        "pref": "兵庫県",
+        "subsidy": 100000,
+        "lat": 34.6431,
+        "lng": 134.9972
+    },
+    {
+        "id": "kasugai",
+        "name": "春日井市",
+        "pref": "愛知県",
+        "subsidy": 100000,
+        "lat": 35.2476,
+        "lng": 136.9715
+    },
+    {
+        "id": "yokkaichi",
+        "name": "四日市市",
+        "pref": "三重県",
+        "subsidy": 100000,
+        "lat": 34.9652,
+        "lng": 136.6217
+    },
+    {
+        "id": "kurume",
+        "name": "久留米市",
+        "pref": "福岡県",
+        "subsidy": 100000,
+        "lat": 33.3192,
+        "lng": 130.5083
+    },
+    {
+        "id": "akita",
+        "name": "秋田市",
+        "pref": "秋田県",
+        "subsidy": 100000,
+        "lat": 39.72,
+        "lng": 140.1025
+    },
+    {
+        "id": "ibaraki-osaka",
+        "name": "茨木市",
+        "pref": "大阪府",
+        "subsidy": 100000,
+        "lat": 34.8153,
+        "lng": 135.5684
+    },
+    {
+        "id": "meguro",
+        "name": "目黒区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.6415,
+        "lng": 139.6982
+    },
+    {
+        "id": "sumida",
+        "name": "墨田区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.7108,
+        "lng": 139.8015
+    },
+    {
+        "id": "morioka",
+        "name": "盛岡市",
+        "pref": "岩手県",
+        "subsidy": 100000,
+        "lat": 39.7036,
+        "lng": 141.1525
+    },
+    {
+        "id": "minato",
+        "name": "港区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.6581,
+        "lng": 139.7516
+    },
+    {
+        "id": "fukushima",
+        "name": "福島市",
+        "pref": "福島県",
+        "subsidy": 100000,
+        "lat": 37.7608,
+        "lng": 140.4747
+    },
+    {
+        "id": "mito",
+        "name": "水戸市",
+        "pref": "茨城県",
+        "subsidy": 100000,
+        "lat": 36.3659,
+        "lng": 140.4714
+    },
+    {
+        "id": "fuchu",
+        "name": "府中市",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.6722,
+        "lng": 139.4805
+    },
+    {
+        "id": "tsu",
+        "name": "津市",
+        "pref": "三重県",
+        "subsidy": 100000,
+        "lat": 34.7186,
+        "lng": 136.5052
+    },
+    {
+        "id": "tsukuba",
+        "name": "つくば市",
+        "pref": "茨城県",
+        "subsidy": 100000,
+        "lat": 36.0835,
+        "lng": 140.0764
+    },
+    {
+        "id": "ichihara",
+        "name": "市原市",
+        "pref": "千葉県",
+        "subsidy": 100000,
+        "lat": 35.5204,
+        "lng": 140.0881
+    },
+    {
+        "id": "hiratsuka",
+        "name": "平塚市",
+        "pref": "神奈川県",
+        "subsidy": 100000,
+        "lat": 35.3338,
+        "lng": 139.349
+    },
+    {
+        "id": "yao",
+        "name": "八尾市",
+        "pref": "大阪府",
+        "subsidy": 100000,
+        "lat": 34.6267,
+        "lng": 135.6001
+    },
+    {
+        "id": "aomori",
+        "name": "青森市",
+        "pref": "青森県",
+        "subsidy": 100000,
+        "lat": 40.8243,
+        "lng": 140.74
+    },
+    {
+        "id": "kakogawa",
+        "name": "加古川市",
+        "pref": "兵庫県",
+        "subsidy": 100000,
+        "lat": 34.7554,
+        "lng": 134.8431
+    },
+    {
+        "id": "nagaoka",
+        "name": "長岡市",
+        "pref": "新潟県",
+        "subsidy": 100000,
+        "lat": 37.4462,
+        "lng": 138.8504
+    },
+    {
+        "id": "fukui",
+        "name": "福井市",
+        "pref": "福井県",
+        "subsidy": 100000,
+        "lat": 36.0641,
+        "lng": 136.2213
+    },
+    {
+        "id": "soka",
+        "name": "草加市",
+        "pref": "埼玉県",
+        "subsidy": 100000,
+        "lat": 35.8282,
+        "lng": 139.8021
+    },
+    {
         "id": "bunkyo",
         "name": "文京区",
         "pref": "東京都",
@@ -40,11 +840,315 @@
         "lng": 139.752
     },
     {
+        "id": "chofu",
+        "name": "調布市",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.6506,
+        "lng": 139.5407
+    },
+    {
+        "id": "chigasaki",
+        "name": "茅ヶ崎市",
+        "pref": "神奈川県",
+        "subsidy": 100000,
+        "lat": 35.3338,
+        "lng": 139.405
+    },
+    {
+        "id": "yamato",
+        "name": "大和市",
+        "pref": "神奈川県",
+        "subsidy": 100000,
+        "lat": 35.4875,
+        "lng": 139.4581
+    },
+    {
+        "id": "shibuya",
+        "name": "渋谷区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.664,
+        "lng": 139.7013
+    },
+    {
+        "id": "tokushima",
+        "name": "徳島市",
+        "pref": "徳島県",
+        "subsidy": 100000,
+        "lat": 34.0657,
+        "lng": 134.5594
+    },
+    {
+        "id": "fuji",
+        "name": "富士市",
+        "pref": "静岡県",
+        "subsidy": 100000,
+        "lat": 35.1616,
+        "lng": 138.6766
+    },
+    {
+        "id": "yamagata",
+        "name": "山形市",
+        "pref": "山形県",
+        "subsidy": 100000,
+        "lat": 38.2555,
+        "lng": 140.3396
+    },
+    {
+        "id": "shimonoseki",
+        "name": "下関市",
+        "pref": "山口県",
+        "subsidy": 100000,
+        "lat": 33.9577,
+        "lng": 130.9407
+    },
+    {
+        "id": "matsumoto",
+        "name": "松本市",
+        "pref": "長野県",
+        "subsidy": 100000,
+        "lat": 36.2332,
+        "lng": 137.9717
+    },
+    {
+        "id": "hakodate",
+        "name": "函館市",
+        "pref": "北海道",
+        "subsidy": 100000,
+        "lat": 41.7687,
+        "lng": 140.7288
+    },
+    {
+        "id": "ageo",
+        "name": "上尾市",
+        "pref": "埼玉県",
+        "subsidy": 100000,
+        "lat": 35.9775,
+        "lng": 139.5936
+    },
+    {
+        "id": "saga",
+        "name": "佐賀市",
+        "pref": "佐賀県",
+        "subsidy": 100000,
+        "lat": 33.2635,
+        "lng": 130.3008
+    },
+    {
+        "id": "sasebo",
+        "name": "佐世保市",
+        "pref": "長崎県",
+        "subsidy": 100000,
+        "lat": 33.1799,
+        "lng": 129.7151
+    },
+    {
         "id": "taito",
         "name": "台東区",
         "pref": "東京都",
         "subsidy": 100000,
         "lat": 35.7126,
-        "lng": 139.779
+        "lng": 139.7799
+    },
+    {
+        "id": "arakawa",
+        "name": "荒川区",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.736,
+        "lng": 139.7831
+    },
+    {
+        "id": "kasukabe",
+        "name": "春日部市",
+        "pref": "埼玉県",
+        "subsidy": 100000,
+        "lat": 35.9741,
+        "lng": 139.7533
+    },
+    {
+        "id": "atsugi",
+        "name": "厚木市",
+        "pref": "神奈川県",
+        "subsidy": 100000,
+        "lat": 35.4431,
+        "lng": 139.3625
+    },
+    {
+        "id": "neyagawa",
+        "name": "寝屋川市",
+        "pref": "大阪府",
+        "subsidy": 100000,
+        "lat": 34.7656,
+        "lng": 135.6361
+    },
+    {
+        "id": "ota-gunma",
+        "name": "太田市",
+        "pref": "群馬県",
+        "subsidy": 100000,
+        "lat": 36.2948,
+        "lng": 139.3783
+    },
+    {
+        "id": "takarazuka",
+        "name": "宝塚市",
+        "pref": "兵庫県",
+        "subsidy": 100000,
+        "lat": 34.8073,
+        "lng": 135.3444
+    },
+    {
+        "id": "nagareyama",
+        "name": "流山市",
+        "pref": "千葉県",
+        "subsidy": 100000,
+        "lat": 35.8562,
+        "lng": 139.9029
+    },
+    {
+        "id": "isesaki",
+        "name": "伊勢崎市",
+        "pref": "群馬県",
+        "subsidy": 100000,
+        "lat": 36.3214,
+        "lng": 139.1975
+    },
+    {
+        "id": "hachinohe",
+        "name": "八戸市",
+        "pref": "青森県",
+        "subsidy": 100000,
+        "lat": 40.5122,
+        "lng": 141.4884
+    },
+    {
+        "id": "nishitokyo",
+        "name": "西東京市",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.7285,
+        "lng": 139.5381
+    },
+    {
+        "id": "yachiyo",
+        "name": "八千代市",
+        "pref": "千葉県",
+        "subsidy": 100000,
+        "lat": 35.7226,
+        "lng": 140.0988
+    },
+    {
+        "id": "kodaira",
+        "name": "小平市",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.7287,
+        "lng": 139.4774
+    },
+    {
+        "id": "higashihiroshima",
+        "name": "東広島市",
+        "pref": "広島県",
+        "subsidy": 100000,
+        "lat": 34.4262,
+        "lng": 132.7436
+    },
+    {
+        "id": "mitaka",
+        "name": "三鷹市",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.6836,
+        "lng": 139.5594
+    },
+    {
+        "id": "matsue",
+        "name": "松江市",
+        "pref": "島根県",
+        "subsidy": 100000,
+        "lat": 35.4681,
+        "lng": 133.0486
+    },
+    {
+        "id": "itami",
+        "name": "伊丹市",
+        "pref": "兵庫県",
+        "subsidy": 100000,
+        "lat": 34.7855,
+        "lng": 135.4158
+    },
+    {
+        "id": "kure",
+        "name": "呉市",
+        "pref": "広島県",
+        "subsidy": 100000,
+        "lat": 34.2483,
+        "lng": 132.5653
+    },
+    {
+        "id": "hino",
+        "name": "日野市",
+        "pref": "東京都",
+        "subsidy": 100000,
+        "lat": 35.6738,
+        "lng": 139.3952
+    },
+    {
+        "id": "kumagaya",
+        "name": "熊谷市",
+        "pref": "埼玉県",
+        "subsidy": 100000,
+        "lat": 36.1472,
+        "lng": 139.3886
+    },
+    {
+        "id": "kofu",
+        "name": "甲府市",
+        "pref": "山梨県",
+        "subsidy": 100000,
+        "lat": 35.6621,
+        "lng": 138.5683
+    },
+    {
+        "id": "odawara",
+        "name": "小田原市",
+        "pref": "神奈川県",
+        "subsidy": 100000,
+        "lat": 35.2555,
+        "lng": 139.1536
+    },
+    {
+        "id": "kishiwada",
+        "name": "岸和田市",
+        "pref": "大阪府",
+        "subsidy": 100000,
+        "lat": 34.4589,
+        "lng": 135.3737
+    },
+    {
+        "id": "tottori",
+        "name": "鳥取市",
+        "pref": "鳥取県",
+        "subsidy": 100000,
+        "lat": 35.5011,
+        "lng": 134.2351
+    },
+    {
+        "id": "numazu",
+        "name": "沼津市",
+        "pref": "静岡県",
+        "subsidy": 100000,
+        "lat": 35.1018,
+        "lng": 138.8606
+    },
+    {
+        "id": "joetsu",
+        "name": "上越市",
+        "pref": "新潟県",
+        "subsidy": 100000,
+        "lat": 37.1493,
+        "lng": 138.2363
     }
 ]
