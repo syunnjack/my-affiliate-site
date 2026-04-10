@@ -42,9 +42,27 @@ export default async function CityPage({
                 ← 23区一覧へ戻る
             </Link>
 
-            <h1 style={{ fontSize: "24px", marginTop: "20px", color: "#333" }}>
-                {city.name}の蓄電池補助金【2026年最新】
-            </h1>
+            <header style={{ marginBottom: "30px", textAlign: "left" }}>
+                <span
+                    style={{
+                        color: "#0052cc",
+                        fontWeight: "bold",
+                        fontSize: "14px",
+                    }}
+                >
+                    東京都 {city.name}
+                </span>
+                <h1
+                    style={{
+                        fontSize: "28px",
+                        marginTop: "5px",
+                        borderBottom: "3px solid #0052cc",
+                        paddingBottom: "10px",
+                    }}
+                >
+                    {city.name}の蓄電池補助金「完全ガイド」【2026年最新】
+                </h1>
+            </header>
 
             <div
                 style={{
@@ -62,6 +80,33 @@ export default async function CityPage({
                 </p>
             </div>
 
+            {/* 地図のすぐ上あたりに追加 */}
+            <section style={{ marginBottom: "30px" }}>
+                <h2
+                    style={{
+                        fontSize: "20px",
+                        color: "#333",
+                        borderLeft: "5px solid #ff8c00",
+                        paddingLeft: "10px",
+                    }}
+                >
+                    {city.name}の蓄電池設置業者の口コミ・評判を確認するには？
+                </h2>
+                <p
+                    style={{
+                        fontSize: "15px",
+                        color: "#555",
+                        lineHeight: "1.6",
+                    }}
+                >
+                    {city.name}
+                    で蓄電池を設置する際、重要になるのが業者の「地元の口コミ」です。
+                    当サイトが提携する一括見積もりサービスでは、{city.name}
+                    での施工実績が豊富な業者の評判を比較し、
+                    最も信頼できるパートナーを簡単に見つけることができます。
+                </p>
+            </section>
+
             {/* 地図エリア（ここが消えていたはずです） */}
             <div
                 style={{
@@ -75,6 +120,29 @@ export default async function CityPage({
             >
                 <MapWrapper lat={city.lat} lng={city.lng} city={city.name} />
             </div>
+
+            {/* 地図のすぐ下あたりに追加 */}
+            <section
+                style={{
+                    marginBottom: "30px",
+                    padding: "20px",
+                    backgroundColor: "#fff5e6",
+                    borderRadius: "10px",
+                }}
+            >
+                <h2
+                    style={{ fontSize: "20px", color: "#d35400", marginTop: 0 }}
+                >
+                    {city.name}でV2H補助金と蓄電池を併用してさらにお得に
+                </h2>
+                <p style={{ fontSize: "15px", color: "#555" }}>
+                    電気自動車（EV）をお持ちなら、
+                    <strong>V2H補助金との併用</strong>が非常におすすめです。
+                    {city.name}
+                    の自治体補助金と国の補助金を組み合わせることで、自己負担額を大幅に抑えて
+                    最新のエネルギーシステムを導入できるケースがあります。
+                </p>
+            </section>
 
             {/* 地図の下に追加 */}
             <div
