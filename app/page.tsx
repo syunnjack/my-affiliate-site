@@ -3,7 +3,6 @@ import Link from "next/link";
 import cities from "@/data/cities.json";
 
 export default function Home() {
-    // データを都道府県ごとに整理
     const prefs = [...new Set(cities.map((c) => c.pref))];
 
     return (
@@ -15,7 +14,6 @@ export default function Home() {
                 fontFamily: "sans-serif",
             }}
         >
-            {/* 1. タイトルを全国版に変更 */}
             <h1
                 style={{
                     textAlign: "center",
@@ -36,17 +34,17 @@ export default function Home() {
                 2026年度の最新情報を市区町村ごとにまとめています
             </p>
 
-            {/* 2. 都道府県ごとにセクションを分ける */}
             {prefs.map((pref) => (
                 <section key={pref} style={{ marginBottom: "40px" }}>
                     <h2
                         style={{
-                            fontSize: "20px",
+                            fontSize: "18px",
                             borderLeft: "6px solid #0052cc",
                             paddingLeft: "15px",
-                            marginBottom: "20px",
-                            backgroundColor: "#f0f4f8",
-                            padding: "10px",
+                            marginBottom: "15px",
+                            backgroundColor: "#f1f5f9",
+                            padding: "12px",
+                            borderRadius: "4px",
                         }}
                     >
                         {pref}
@@ -65,6 +63,8 @@ export default function Home() {
                                 <Link
                                     key={city.id}
                                     href={`/area/${city.id}`}
+                                    // クラス名を付けて CSS で制御（エラー回避）
+                                    className="city-button"
                                     style={{
                                         display: "block",
                                         padding: "15px 10px",
@@ -75,17 +75,8 @@ export default function Home() {
                                         textAlign: "center",
                                         fontWeight: "500",
                                         background: "#fff",
-                                        transition: "all 0.2s",
-                                        boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
+                                        boxShadow: "0 1px 2px rgba(0,0,0,0.05)",
                                     }}
-                                    onMouseEnter={(e) =>
-                                        (e.currentTarget.style.borderColor =
-                                            "#0052cc")
-                                    }
-                                    onMouseLeave={(e) =>
-                                        (e.currentTarget.style.borderColor =
-                                            "#e2e8f0")
-                                    }
                                 >
                                     {city.name}
                                 </Link>
