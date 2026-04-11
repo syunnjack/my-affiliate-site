@@ -3,7 +3,61 @@ import Link from "next/link";
 import cities from "@/data/cities.json";
 
 export default function Home() {
-    const prefs = [...new Set(cities.map((c) => c.pref))];
+    // 1. 北から順の都道府県リストを定義
+    const sortedPrefOrder = [
+        "北海道",
+        "青森県",
+        "岩手県",
+        "宮城県",
+        "秋田県",
+        "山形県",
+        "福島県",
+        "茨城県",
+        "栃木県",
+        "群馬県",
+        "埼玉県",
+        "千葉県",
+        "東京都",
+        "神奈川県",
+        "新潟県",
+        "富山県",
+        "石川県",
+        "福井県",
+        "山梨県",
+        "長野県",
+        "岐阜県",
+        "静岡県",
+        "愛知県",
+        "三重県",
+        "滋賀県",
+        "京都府",
+        "大阪府",
+        "兵庫県",
+        "奈良県",
+        "和歌山県",
+        "鳥取県",
+        "島根県",
+        "岡山県",
+        "広島県",
+        "山口県",
+        "徳島県",
+        "香川県",
+        "愛媛県",
+        "高知県",
+        "福岡県",
+        "佐賀県",
+        "長崎県",
+        "熊本県",
+        "大分県",
+        "宮崎県",
+        "鹿児島県",
+        "沖縄県",
+    ];
+
+    // 2. 存在する都道府県だけを抽出し、上記の順番で並べ替える
+    const prefs = sortedPrefOrder.filter((pref) =>
+        cities.some((city) => city.pref === pref),
+    );
 
     return (
         <main
@@ -36,6 +90,7 @@ export default function Home() {
 
             {prefs.map((pref) => (
                 <section key={pref} style={{ marginBottom: "40px" }}>
+                    {/* 見出しのデザインをさらに洗練 */}
                     <h2
                         style={{
                             fontSize: "18px",
@@ -45,6 +100,7 @@ export default function Home() {
                             backgroundColor: "#f1f5f9",
                             padding: "12px",
                             borderRadius: "4px",
+                            color: "#1e293b",
                         }}
                     >
                         {pref}
@@ -63,7 +119,6 @@ export default function Home() {
                                 <Link
                                     key={city.id}
                                     href={`/area/${city.id}`}
-                                    // クラス名を付けて CSS で制御（エラー回避）
                                     className="city-button"
                                     style={{
                                         display: "block",
