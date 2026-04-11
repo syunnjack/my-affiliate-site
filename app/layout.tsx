@@ -7,6 +7,14 @@ export default function RootLayout({
     return (
         <html lang="ja">
             <body>
+                <body
+                    style={{
+                        margin: 0,
+                        backgroundColor: "#f8fafc", // 真っ白ではなく、少し高級感のある薄いグレー
+                        color: "#1e293b",
+                        lineHeight: "1.6",
+                    }}
+                ></body>
                 {/* メインコンテンツ（各ページの中身がここに入る） */}
                 <main>{children}</main>
 

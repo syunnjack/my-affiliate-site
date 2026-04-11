@@ -42,7 +42,13 @@ export default async function CityPage({
                 ← 23区一覧へ戻る
             </Link>
 
-            <header style={{ marginBottom: "30px", textAlign: "left" }}>
+            <header
+                style={{
+                    marginBottom: "30px",
+                    textAlign: "left",
+                    marginTop: "20px",
+                }}
+            >
                 <span
                     style={{
                         color: "#0052cc",
@@ -50,7 +56,8 @@ export default async function CityPage({
                         fontSize: "14px",
                     }}
                 >
-                    東京都 {city.name}
+                    {/* city.pref を使うことで自動的にその都市の県名が入ります */}
+                    {city.pref} {city.name}
                 </span>
                 <h1
                     style={{
