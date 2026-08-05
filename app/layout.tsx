@@ -1,4 +1,11 @@
 // app/layout.tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "蓄電池・V2H補助金ナビ｜自治体別の補助金情報をかんたん検索",
+    description: "家庭用蓄電池・V2H(電気自動車給電システム)の導入で使える国・自治体の補助金情報を、都道府県・市区町村別にまとめたガイドです。",
+};
+
 export default function RootLayout({
     children,
 }: {
@@ -6,15 +13,14 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ja"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-KFW7PX4BSQ"></script><script dangerouslySetInnerHTML={{__html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KFW7PX4BSQ');`}} /></head>
-            <body>
-                <body
-                    style={{
-                        margin: 0,
-                        backgroundColor: "#f8fafc", // 真っ白ではなく、少し高級感のある薄いグレー
-                        color: "#1e293b",
-                        lineHeight: "1.6",
-                    }}
-                ></body>
+            <body
+                style={{
+                    margin: 0,
+                    backgroundColor: "#f8fafc", // 真っ白ではなく、少し高級感のある薄いグレー
+                    color: "#1e293b",
+                    lineHeight: "1.6",
+                }}
+            >
                 {/* メインコンテンツ（各ページの中身がここに入る） */}
                 <main>{children}</main>
 
