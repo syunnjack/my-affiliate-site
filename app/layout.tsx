@@ -12,7 +12,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="ja"><head><script async src="https://www.googletagmanager.com/gtag/js?id=G-KFW7PX4BSQ"></script><script dangerouslySetInnerHTML={{__html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KFW7PX4BSQ');`}} /></head>
+        <html lang="ja"><head>
+  <meta name="google-site-verification" content="Qdq_AmPN64rfe-QOJRz5qtvM-lFMfBTCfM-KxOLLSvY" /><script async src="https://www.googletagmanager.com/gtag/js?id=G-KFW7PX4BSQ"></script><script dangerouslySetInnerHTML={{__html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KFW7PX4BSQ');`}} /></head>
             <body
                 style={{
                     margin: 0,
