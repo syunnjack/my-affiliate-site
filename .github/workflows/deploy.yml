@@ -1,10 +1,13 @@
 # chikuden-hojokin.jp へ配信する。
 #
-# このドメインの DNS は既に Xserver（85.131.221.80 / ns*.xserver.jp）を向いて
-# いるが、public_html に何も置かれておらずサーバの初期ページが出ていた。
-# Next.js を静的書き出し（output: "export"）して、その中身を置く。
+# このドメインの DNS は Xserver を向いている。Next.js を静的書き出し
+# （output: "export"）して、out/ の中身を public_html に置く。
 #
-# 消す操作はしない。古いファイルが残っても上書きで最新になる。
+# 秘密鍵はシークレットに末尾改行が残らないため、書き出すときに
+# printf '%s\n' で改行を補う。補わないと ssh が
+# 「Load key: invalid format」で弾く。
+#
+# --delete は付けない。古いファイルが残っても上書きで最新になる。
 name: Deploy to Xserver
 
 on:
@@ -28,14 +31,23 @@ jobs:
       - name: Build (static export)
         run: npm run build
 
-      - name: Deploy to Xserver via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: ${{ secrets.SSH_USERNAME }}
-          server: ${{ secrets.SSH_HOST }}
-          port: 10022
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: './out/*'
-          remote_path: '/home/xs501620/chikuden-hojokin.jp/public_html/'
-          sftp_only: true
-          delete_remote_files: false
+      - name: Set up the deploy key
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p 10022 "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+          ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null && echo "鍵を読み込めました"
+
+      - name: Send the built site
+        env:
+          DEST: ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/xs501620/chikuden-hojokin.jp/public_html/
+        run: |
+          echo "HTMLファイル数: $(find ./out -name '*.html' | wc -l)"
+          rsync -az --no-perms --no-times \
+            -e "ssh -i ~/.ssh/deploy_key -p 10022" \
+            ./out/ "$DEST"
+
+      - name: Remove the deploy key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key
