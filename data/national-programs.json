@@ -1,0 +1,28 @@
+{
+  "note": "家庭用蓄電池に関わる国の補助制度。金額や受付状況は年度・予算で変わるため、必ず出典の公式ページで最新を確認すること。ここには一次情報で確認できた事実だけを書く。",
+  "checkedAt": "2026年8月19日",
+  "programs": [
+    {
+      "id": "dr-battery-r7h",
+      "name": "令和7年度補正 家庭用蓄電システム導入支援事業（DR補助金）",
+      "operator": "一般社団法人 環境共創イニシアチブ（SII）",
+      "target": "家庭用蓄電システム（補助対象製品は登録制）",
+      "status": "closed",
+      "statusLabel": "公募終了",
+      "statusDetail": "2026年5月29日に交付申請額の合計が予算に達したため公募終了。公募の再開予定はありません。",
+      "sourceUrl": "https://dr-battery.sii.or.jp/r7h/",
+      "sourceLabel": "SII 公式サイト"
+    },
+    {
+      "id": "zeh-r8",
+      "name": "令和8年度 ZEH支援事業",
+      "operator": "一般社団法人 環境共創イニシアチブ（SII）",
+      "target": "ZEHの新築戸建住宅を建築・購入する個人など。蓄電システムは単独では申請できず、ZEH等の要件を満たす住宅への加算として扱われます。",
+      "status": "open",
+      "statusLabel": "公募受付中",
+      "statusDetail": "補助額や加算の要件は年度ごとの公募要領で定められています。金額は公式ページでご確認ください。",
+      "sourceUrl": "https://zehweb.jp/",
+      "sourceLabel": "ZEH支援事業 公式サイト"
+    }
+  ]
+}

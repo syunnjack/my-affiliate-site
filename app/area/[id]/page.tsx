@@ -1,4 +1,5 @@
 import cities from "@/data/cities.json";
+import national from "@/data/national-programs.json";
 import MapWrapper from "@/components/MapWrapper";
 import Link from "next/link";
 
@@ -67,7 +68,7 @@ export default async function CityPage({
                         paddingBottom: "10px",
                     }}
                 >
-                    {city.name}の蓄電池補助金「完全ガイド」【2026年最新】
+                    {city.name}の蓄電池補助金の調べ方
                 </h1>
             </header>
 
@@ -79,13 +80,96 @@ export default async function CityPage({
                     margin: "20px 0",
                 }}
             >
-                <p style={{ fontSize: "18px", fontWeight: "bold", margin: 0 }}>
-                    最大補助額：
-                    <span style={{ color: "#ff4500", fontSize: "24px" }}>
-                        {city.subsidy.toLocaleString()}円
-                    </span>
+                {/*
+                  以前はここに「最大補助額 100,000円」と出していたが、その値は
+                  144自治体すべてで同じ固定値で、出典も年度も無かった。
+                  自治体の補助制度は金額も条件も受付期間もばらばらで、全国を
+                  まとめた公開データも存在しない。裏の取れない金額を出すのは
+                  やめて、その自治体の公式サイトへ案内する。
+                */}
+                <p style={{ fontSize: "16px", margin: "0 0 12px", fontWeight: "bold" }}>
+                    {city.name}の補助制度は、市区町村の公式サイトでご確認ください
+                </p>
+                <p style={{ fontSize: "14px", color: "#555", margin: "0 0 16px", lineHeight: 1.7 }}>
+                    自治体の蓄電池補助金は、金額・条件・受付期間が自治体ごとに異なり、
+                    年度の途中で受付が終わることもあります。当サイトでは金額を独自に
+                    掲載せず、一次情報にあたっていただく形にしています。
+                </p>
+                <a
+                    href={city.officialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                        display: "inline-block",
+                        background: "#0052cc",
+                        color: "#fff",
+                        padding: "12px 20px",
+                        borderRadius: "8px",
+                        textDecoration: "none",
+                        fontWeight: "bold",
+                        fontSize: "15px",
+                    }}
+                >
+                    {city.name}の公式サイトを開く →
+                </a>
+                <p style={{ fontSize: "12px", color: "#666", margin: "10px 0 0" }}>
+                    サイト内で「蓄電池 補助金」と検索すると見つかりやすいです。
                 </p>
             </div>
+
+            {/* 国の制度は自治体を問わず共通なので、ここで現状を伝える */}
+            <section style={{ marginBottom: "30px" }}>
+                <h2
+                    style={{
+                        fontSize: "20px",
+                        color: "#333",
+                        borderLeft: "5px solid #0052cc",
+                        paddingLeft: "10px",
+                    }}
+                >
+                    国の制度の状況（{national.checkedAt}時点）
+                </h2>
+                <ul style={{ listStyle: "none", padding: 0, margin: "16px 0 0" }}>
+                    {national.programs.map((p) => (
+                        <li
+                            key={p.id}
+                            style={{
+                                border: "1px solid #ddd",
+                                borderRadius: "8px",
+                                padding: "16px",
+                                marginBottom: "12px",
+                            }}
+                        >
+                            <div style={{ display: "flex", gap: "10px", alignItems: "center", flexWrap: "wrap" }}>
+                                <span
+                                    style={{
+                                        fontSize: "12px",
+                                        fontWeight: "bold",
+                                        color: "#fff",
+                                        background: p.status === "open" ? "#16a34a" : "#6b7280",
+                                        borderRadius: "4px",
+                                        padding: "3px 8px",
+                                    }}
+                                >
+                                    {p.statusLabel}
+                                </span>
+                                <strong style={{ fontSize: "15px" }}>{p.name}</strong>
+                            </div>
+                            <p style={{ fontSize: "14px", color: "#555", margin: "10px 0 0", lineHeight: 1.7 }}>
+                                {p.statusDetail}
+                            </p>
+                            <p style={{ fontSize: "13px", color: "#555", margin: "8px 0 0", lineHeight: 1.7 }}>
+                                対象: {p.target}
+                            </p>
+                            <p style={{ fontSize: "13px", margin: "8px 0 0" }}>
+                                <a href={p.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: "#0052cc" }}>
+                                    出典: {p.sourceLabel} ↗
+                                </a>
+                            </p>
+                        </li>
+                    ))}
+                </ul>
+            </section>
 
             {/* 地図のすぐ上あたりに追加 */}
             <section style={{ marginBottom: "30px" }}>
@@ -143,11 +227,9 @@ export default async function CityPage({
                     {city.name}でV2H補助金と蓄電池を併用してさらにお得に
                 </h2>
                 <p style={{ fontSize: "15px", color: "#555" }}>
-                    電気自動車（EV）をお持ちなら、
-                    <strong>V2H補助金との併用</strong>が非常におすすめです。
-                    {city.name}
-                    の自治体補助金と国の補助金を組み合わせることで、自己負担額を大幅に抑えて
-                    最新のエネルギーシステムを導入できるケースがあります。
+                    電気自動車（EV）をお持ちなら、V2H機器も補助の対象になることがあります。
+                    国の制度と{city.name}の制度は、併用の可否や上限の扱いがそれぞれ定められて
+                    いるため、申請前に双方の要領で条件を確認してください。
                 </p>
             </section>
 
@@ -199,8 +281,8 @@ export default async function CityPage({
                         marginBottom: "25px",
                     }}
                 >
-                    厳選された優良業者から、{city.name}
-                    の補助金に合わせた最適なプランを無料で提案してもらえます。
+                    {city.name}に対応する施工業者から、無料で見積もりを取り寄せられます。
+                    利用できる補助制度や申請の可否は、業者にも確認してください。
                 </p>
 
                 {/* アフィリエイトボタン */}
